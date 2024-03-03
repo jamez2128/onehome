@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens//devices_screen.dart';
-import 'screens//automation_screen.dart';
+import 'screens/devices_screen.dart';
+import 'screens/automation_screen.dart';
 
 void main() {
   runApp(const MyApp());
