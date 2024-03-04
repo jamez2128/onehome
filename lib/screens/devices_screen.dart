@@ -19,13 +19,15 @@ class _DevicesScreenState extends State<DevicesScreen> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Devices"),
         actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.refresh)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.notifications)),
         ],
       ),
       body: ListView(
         children: [
           ListTile(
-            title: const Text("Device 1"),
+            leading: const Icon(Icons.lightbulb),
+            title: const Text("Living Room Lights"),
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -35,15 +37,18 @@ class _DevicesScreenState extends State<DevicesScreen> {
             },
           ),
           ListTile(
-            title: const Text("Device 2"),
+            leading: const Icon(Icons.tv),
+            title: const Text("Living Room TV"),
             onTap: () {},
           ),
           ListTile(
-            title: const Text("Device 3"),
+            leading: const Icon(Icons.lightbulb),
+            title: const Text("Kitchen Lights"),
             onTap: () {},
           ),
           ListTile(
-            title: const Text("Device 4"),
+            leading: const Icon(Icons.speaker),
+            title: const Text("Dining Room Speakers"),
             onTap: () {},
           ),
         ],
@@ -68,14 +73,15 @@ class AddDevice extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _controller = TextEditingController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text("Add Device"),
         actions: [
           MaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             shape: const CircleBorder(side: BorderSide(color: Colors.transparent)),
             child: const Text("Save"),
           ),
@@ -93,7 +99,7 @@ class AddDevice extends StatelessWidget {
               decoration: const InputDecoration(
                   labelText: "Label",
                   prefixIcon: Icon(Icons.label),
-                  border: OutlineInputBorder()
+                  border: UnderlineInputBorder()
               ),
               onChanged: (String value) {},
             ),
@@ -101,11 +107,11 @@ class AddDevice extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
-              controller: _controller,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.numbers),
                 labelText: "Pair Code",
-                border: UnderlineInputBorder(),
+                border: const UnderlineInputBorder(),
                 suffixIcon: IconButton(icon: const Icon(Icons.qr_code_scanner), onPressed: () { },)
               ),
               onChanged: (String value) {},
@@ -129,7 +135,9 @@ class DeviceConfiguration extends StatelessWidget {
         title: const Text("Device Configuration"),
         actions: [
           MaterialButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             shape: const CircleBorder(side: BorderSide(color: Colors.transparent)),
             child: const Text("Save"),
           ),
@@ -142,9 +150,10 @@ class DeviceConfiguration extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: TextFormField(
+            child: TextField(
               keyboardType: TextInputType.text,
               decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
                   labelText: "Label",
                   prefixIcon: Icon(Icons.label),
               ),
