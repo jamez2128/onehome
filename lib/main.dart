@@ -12,13 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      themeMode: ThemeMode.dark,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
       title: 'OneHome',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6324EA)),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF6324EA),
+            brightness: Brightness.dark,
+        ),
         useMaterial3: true,
       ),
       home: const DevicesScreen(),
