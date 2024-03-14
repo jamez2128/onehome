@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: AnimatedSplashScreen(
-        splash: 'assets/logo.jpeg',
+        splash: 'assets/logo.jpg',
         nextScreen: const DevicesScreen(),
         splashTransition: SplashTransition.fadeTransition,
       ),
