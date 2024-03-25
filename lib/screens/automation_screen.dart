@@ -98,7 +98,7 @@ class _AutomationScreenState extends State<AutomationScreen> {
             return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) => Card(
-                color: Theme.of(context).colorScheme.inversePrimary,
+                color: Colors.black,
                 margin: const EdgeInsets.all(15),
                 child: ListTile(
                   title: Text(
