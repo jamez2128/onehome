@@ -16,15 +16,16 @@ class MyApp extends StatelessWidget {
       title: 'OneHome',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color(0xFF6324EA),
-            brightness: Brightness.dark,
+          seedColor: const Color(0xFF6324EA),
+          brightness: Brightness.dark,
         ),
         useMaterial3: true,
       ),
       home: AnimatedSplashScreen(
-        splash: 'assets/logo.jpg',
+        splash: Image.asset('assets/logo.jpg'),
+        backgroundColor: Colors.black87,
         nextScreen: const DevicesScreen(),
-        splashTransition: SplashTransition.fadeTransition,
+        splashTransition: SplashTransition.slideTransition,
       ),
     );
   }
